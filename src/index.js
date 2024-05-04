@@ -19,6 +19,8 @@ import { refs } from './js/refs';
 import { createTask } from './js/create-task';
 import { localStorageApi } from './js/localstorage-api';
 import { createTaskMarkup } from './js/create-task-markup';
+import { renderTasks } from './js/render-tasks';
+import { deleteTask } from './js/delete-task';
 
 refs.form.addEventListener('submit', event => {
   event.preventDefault();
@@ -27,3 +29,7 @@ refs.form.addEventListener('submit', event => {
   const markup = createTaskMarkup(formTask);
   refs.list.insertAdjacentHTML('beforeend', markup);
 });
+
+renderTasks();
+
+refs.list.addEventListener('click', deleteTask);
