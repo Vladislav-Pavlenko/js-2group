@@ -14,6 +14,7 @@ function deleteTask(id) {
   const tasksArray = localStorageApi.getAll();
   const updateTasks = tasksArray.filter(item => item.id !== id);
   localStorage.setItem(KEY, JSON.stringify(updateTasks));
+  return updateTasks;
 }
 
 export const localStorageApi = {
