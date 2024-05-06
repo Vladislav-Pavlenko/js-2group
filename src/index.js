@@ -28,6 +28,7 @@ refs.form.addEventListener('submit', event => {
   localStorageApi.add(formTask);
   const markup = createTaskMarkup(formTask);
   refs.list.insertAdjacentHTML('beforeend', markup);
+  refs.form.reset();
 });
 
 renderTasks();
